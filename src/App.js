@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button'
-import Delete from  '@material-ui/icons/Delete'
 import PdAppBar from './components/pd-app-bar/'
-import logo from './logo.svg';
-import './App.css';
+import { withStyles } from '@material-ui/core/styles';
+import styles from './app-style'
+import PdSideBar from './components/pd-side-bar'
+import PdContent from "./components/pd-content";
 
 class App extends Component {
   render() {
+      const { classes }  = this.props;
     return (
-      <div className="App">
-        <PdAppBar/>
+      <div className={classes.root}>
+          <PdAppBar/>
+          <PdSideBar/>
+          <PdContent/>
       </div>
     );
   }
 }
 
-export default App;
+export default withStyles(styles)(App);
