@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import styles from './pd-table-style';
+import Grid from "@material-ui/core/Grid";
 
 let id = 0;
 function createData(name, calories, fat, carbs, protein) {
@@ -26,34 +27,41 @@ const rows = [
 function SimpleTable(props) {
 		const { classes } = props;
 		return (
-				<div>
+				<div className={classes.root}>
 						<div className={classes.toolbar} />
-						<Paper className={classes.root}>
-								<Table className={classes.table}>
-										<TableHead>
-												<TableRow>
-														<TableCell>Dessert (100g serving)</TableCell>
-														<TableCell align="right">Calories</TableCell>
-														<TableCell align="right">Fat (g)</TableCell>
-														<TableCell align="right">Carbs (g)</TableCell>
-														<TableCell align="right">Protein (g)</TableCell>
-												</TableRow>
-										</TableHead>
-										<TableBody>
-												{rows.map(row => (
-														<TableRow key={row.id}>
-																<TableCell component="th" scope="row">
-																		{row.name}
-																</TableCell>
-																<TableCell align="right">{row.calories}</TableCell>
-																<TableCell align="right">{row.fat}</TableCell>
-																<TableCell align="right">{row.carbs}</TableCell>
-																<TableCell align="right">{row.protein}</TableCell>
+						<Grid container spacing={24} wrap={"wrap"}>
+						<Grid item xs={6}>
+								<Paper className={classes.paper}>
+										<Table className={classes.table}>
+												<TableHead>
+														<TableRow>
+																<TableCell>Dessert (100g serving)</TableCell>
+																<TableCell align="right">Calories</TableCell>
+																<TableCell align="right">Fat (g)</TableCell>
+																<TableCell align="right">Carbs (g)</TableCell>
+																<TableCell align="right">Protein (g)</TableCell>
 														</TableRow>
-												))}
-										</TableBody>
-								</Table>
-						</Paper>
+												</TableHead>
+												<TableBody>
+														{rows.map(row => (
+																<TableRow key={row.id}>
+																		<TableCell component="th" scope="row">
+																				{row.name}
+																		</TableCell>
+																		<TableCell align="right">{row.calories}</TableCell>
+																		<TableCell align="right">{row.fat}</TableCell>
+																		<TableCell align="right">{row.carbs}</TableCell>
+																		<TableCell align="right">{row.protein}</TableCell>
+																</TableRow>
+														))}
+												</TableBody>
+										</Table>
+								</Paper>
+						</Grid>
+						<Grid item xs={6}>
+								<Paper className={classes.paper}>xs=6</Paper>
+						</Grid>
+						</Grid>
 				</div>
 
 		);

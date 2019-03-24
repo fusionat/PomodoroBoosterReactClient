@@ -2,9 +2,7 @@ const styles = theme => {
     console.log(theme.mixins.toolbar);
     return {
         root: {
-            width: '100%',
-            marginTop: theme.spacing.unit * 3,
-            overflowX: 'auto',
+            flexGrow: 1
         },
         table: {
             minWidth: 700,
@@ -19,13 +17,12 @@ const styles = theme => {
                 backgroundColor: theme.palette.background.default,
             },
         },
-        head: {
-            backgroundColor: theme.palette.common.black,
-            color: theme.palette.common.white,
-        },
-        body: {
-            fontSize: 14,
-        },
+        paper: {
+            padding: theme.spacing.unit * 2,
+            textAlign: 'center',
+            color: theme.palette.text.secondary,
+            overflow: 'auto'
+        }
     }
 };
 
