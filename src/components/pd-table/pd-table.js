@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import styles from './pd-table-style';
 import Grid from "@material-ui/core/Grid";
+import PdCard from '../pd-card/pd-card'
 
 let id = 0;
 function createData(name, calories, fat, carbs, protein) {
@@ -27,7 +28,7 @@ const rows = [
 function SimpleTable(props) {
 		const { classes } = props;
 		return (
-				<div className={classes.root}>
+				<div >
 						<div className={classes.toolbar} />
 						<Grid container spacing={24} wrap={"wrap"}>
 						<Grid item xs={6}>
@@ -59,7 +60,9 @@ function SimpleTable(props) {
 								</Paper>
 						</Grid>
 						<Grid item xs={6}>
-								<Paper className={classes.paper}>xs=6</Paper>
+								<Paper className={classes.paper}>
+										<PdCard/>
+								</Paper>
 						</Grid>
 						</Grid>
 				</div>
