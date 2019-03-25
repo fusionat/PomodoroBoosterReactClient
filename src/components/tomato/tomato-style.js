@@ -52,6 +52,10 @@ const styles = theme => ({
     chip: {
       fontSize: '0.7rem',
       height: '25px'
+    }, 
+
+    timer: {
+      textAlign: 'center'
     }
 
   });

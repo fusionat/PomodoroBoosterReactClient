@@ -30,11 +30,15 @@ function MediaControlCard(props) {
               color="secondary"
               className={classes.chip}
             />
-          </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-           <Timer/>
-          </Typography>        
+          </Typography>               
         </CardContent>
+
+        <CardContent className={classes.timer}>
+          <Typography variant="subtitle1" color="textSecondary">
+            <Timer/>
+          </Typography> 
+       </CardContent> 
+
         <div className={classes.controls}>
           <IconButton aria-label="Start">
             <PlayArrowIcon className={classes.play}/>
@@ -49,7 +53,6 @@ function MediaControlCard(props) {
           </IconButton>
         </div>
       </div>
-
       <div className={classes.coverHolder}>
         <CardMedia
           className={classes.cover}

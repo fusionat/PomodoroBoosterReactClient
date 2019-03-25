@@ -20,9 +20,9 @@ class Timer extends Component {
 
     render = () => {
         return (
-            <div>
+            <span>
                 {this.state.time}
-            </div>
+            </span>
         )
     }
 }
