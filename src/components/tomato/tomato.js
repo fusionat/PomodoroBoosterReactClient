@@ -11,6 +11,7 @@ import Pause from '@material-ui/icons/Pause';
 import Stop from '@material-ui/icons/Stop';
 import TomatoIcn from './icons/tomato.svg'
 import styles from './tomato-style';
+import Timer from '../timer/timer'
 
 function MediaControlCard(props) {
   const { classes, theme } = props;
@@ -26,7 +27,7 @@ function MediaControlCard(props) {
            Tags
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
-           Timer
+           <Timer/>
           </Typography>        
         </CardContent>
         <div className={classes.controls}>
