@@ -47,7 +47,13 @@ const styles = theme => ({
     stop: {
       color: '#D3554E',
       fontSize: fontSize
+    },
+
+    chip: {
+      fontSize: '0.7rem',
+      height: '25px'
     }
+
   });
 
   export default styles;

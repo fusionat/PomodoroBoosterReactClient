@@ -12,6 +12,7 @@ import Stop from '@material-ui/icons/Stop';
 import TomatoIcn from './icons/tomato.svg'
 import styles from './tomato-style';
 import Timer from '../timer/timer'
+import Chip from '@material-ui/core/Chip';
 
 function MediaControlCard(props) {
   const { classes, theme } = props;
@@ -24,7 +25,11 @@ function MediaControlCard(props) {
             Tomato Name
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
-           Tags
+            <Chip
+              label="tag"
+              color="secondary"
+              className={classes.chip}
+            />
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
            <Timer/>
