@@ -3,66 +3,35 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import Pause from '@material-ui/icons/Pause';
-import Stop from '@material-ui/icons/Stop';
-import TomatoIcn from './icons/tomato.svg'
 import styles from './tomato-style';
-import Timer from '../timer/timer'
+import Timer from '../timer'
 import Chip from '@material-ui/core/Chip';
+import TimerController from '../timer-controller'
 
 function MediaControlCard(props) {
-  const { classes, theme } = props;
+  const { classes } = props;
 
   return (
     <Card className={classes.card}>
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography component="h5" variant="h5">
-            Tomato Name
+            My first Tomato task
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
             <Chip
-              label="tag"
+              label="MyProject"
               color="secondary"
               className={classes.chip}
             />
-          </Typography>               
+          </Typography>
         </CardContent>
-
-        <CardContent className={classes.timer}>
-          <Typography variant="subtitle1" color="textSecondary">
-            <Timer/>
-          </Typography> 
-       </CardContent> 
-
         <div className={classes.controls}>
-          <IconButton aria-label="Start">
-            <PlayArrowIcon className={classes.play}/>
-          </IconButton>
-
-          <IconButton aria-label="pause">
-            <Pause className={classes.pause} />
-          </IconButton>
-
-          <IconButton aria-label="stop">
-            <Stop className={classes.stop}/>
-          </IconButton>
+          <TimerController />
         </div>
       </div>
-      
-      <CardContent>
-        <div className={classes.coverHolder}>
-          <CardMedia
-            className={classes.cover}
-            image={TomatoIcn}
-            title="Live from space album cover"
-          />
-        </div>
-      </CardContent>
+      <Timer />
     </Card>
   );
 }

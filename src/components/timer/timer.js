@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import EasyTimer from 'easytimer.js'
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+import styles from './timer-style'
 
 class Timer extends Component {
     constructor(){
@@ -19,12 +23,16 @@ class Timer extends Component {
     }
 
     render = () => {
+        const { classes } = this.props;
+
         return (
-            <span>
-                {this.state.time}
-            </span>
+            <CardContent className={classes.timer}>
+                <Typography className={classes.timerText} >
+                    {this.state.time}
+                </Typography> 
+            </CardContent>  
         )
     }
 }
 
-export default Timer;
+export default withStyles(styles)(Timer)
