@@ -53,13 +53,16 @@ function MediaControlCard(props) {
           </IconButton>
         </div>
       </div>
-      <div className={classes.coverHolder}>
-        <CardMedia
-          className={classes.cover}
-          image={TomatoIcn}
-          title="Live from space album cover"
-        />
-      </div>
+      
+      <CardContent>
+        <div className={classes.coverHolder}>
+          <CardMedia
+            className={classes.cover}
+            image={TomatoIcn}
+            title="Live from space album cover"
+          />
+        </div>
+      </CardContent>
     </Card>
   );
 }

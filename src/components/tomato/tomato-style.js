@@ -1,4 +1,4 @@
-const fontSize = '50px';
+const fontSize = '30px';
 const styles = theme => ({
     card: {
       display: 'flex',
