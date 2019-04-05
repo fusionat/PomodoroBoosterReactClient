@@ -1,6 +1,6 @@
 
 const initialState = {
-    books: []
+    pomodoros: []
   };
   
   const reducer = (state = initialState, action) => {
