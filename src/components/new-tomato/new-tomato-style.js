@@ -1,29 +1,34 @@
 const styles = theme => ({
 		card: {
 				display: 'flex',
-				flexDirection: 'row'
+				flexDirection: 'row',
+				margin: theme.myMarging
 		},
 		content: {
 				display: 'flex',
 				justifyContent: 'center',
-				flexDirection: 'column'
+				flexDirection: 'column',
+				flex: 2
 		},
+		input: {
+				width: '100%'
+		},
+		buttons: {
+				display: 'flex',
+				justifyContent: 'space-between'
+		},
+
 		cover: {
 				width: '100px',
 				height: '100px'
 		},
 
 		tomatoIcon: {
-				alignItems: 'center'
+				display: 'flex',
+				justifyContent: 'center',
+				flex: 1
 		},
 
-		buttons: {
-				display: 'flex',
-				justifyContent: 'space-between'
-		},
-		input: {
-				width: '100%'
-		}
 });
 
 export default styles;

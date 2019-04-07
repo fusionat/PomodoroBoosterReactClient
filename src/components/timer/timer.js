@@ -10,7 +10,7 @@ class Timer extends Component {
         super();
         this.timer = new EasyTimer();    
         this.timer.start();
-        this.state = {time: ''};
+        this.state = {time: '00:00:00'};
         this.timer.addEventListener('secondsUpdated', (e) => {
             this.setState( () => {
                 return  {

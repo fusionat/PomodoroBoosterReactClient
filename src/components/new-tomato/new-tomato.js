@@ -12,40 +12,37 @@ import Button from "@material-ui/core/Button";
 class NewTomato extends Component {
 
 		render() {
-				const { classes } = this.props;
+				const {classes} = this.props;
 				return (
-								<Card className={classes.card}>
-										<CardContent className={classes.content}>
-
-														<Typography component="h5" variant="h5">
-																<TextField
-																		id="outlined-with-placeholder"
-																		label="Tomato name"
-																		margin="normal"
-																		variant="outlined"
-																		className={classes.input}
-																/>
-														</Typography>
-
-
-												<div className={classes.buttons}>
-														<Button variant="contained" color="primary" className={classes.button}>
-																Create
-														</Button>
-														<Button variant="contained" color="secondary" className={classes.button}>
-																Cancel
-														</Button>
-												</div>
-
-										</CardContent>
-										<CardContent className={classes.tomatoIcon}>
-												<CardMedia
-														className={classes.cover}
-														image={tomatoIcon}
-														title="Live from space album cover"
+						<Card className={classes.card}>
+								<CardContent className={classes.content}>
+										<Typography component="h5" variant="h5">
+												<TextField
+														id="outlined-with-placeholder"
+														label="Tomato name"
+														margin="normal"
+														variant="outlined"
+														className={classes.input}
 												/>
-										</CardContent>
-								</Card>
+										</Typography>
+										<div className={classes.buttons}>
+												<Button variant="contained" color="primary" className={classes.button}>
+														Create
+												</Button>
+												<Button variant="contained" color="secondary" className={classes.button}>
+														Cancel
+												</Button>
+										</div>
+
+								</CardContent>
+								<CardContent className={classes.tomatoIcon}>
+										<CardMedia
+												className={classes.cover}
+												image={tomatoIcon}
+												title="Live from space album cover"
+										/>
+								</CardContent>
+						</Card>
 				);
 
 		}
