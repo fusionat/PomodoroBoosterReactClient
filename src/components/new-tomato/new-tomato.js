@@ -16,28 +16,34 @@ class NewTomato extends Component {
 				return (
 								<Card className={classes.card}>
 										<CardContent className={classes.content}>
-												<Typography component="h5" variant="h5">
+
+														<Typography component="h5" variant="h5">
 																<TextField
 																		id="outlined-with-placeholder"
 																		label="Tomato name"
 																		margin="normal"
 																		variant="outlined"
+																		className={classes.input}
 																/>
-												</Typography>
-												<Typography component="h5" variant="h5">
-														00:25
-												</Typography>
+														</Typography>
+
+
+												<div className={classes.buttons}>
+														<Button variant="contained" color="primary" className={classes.button}>
+																Create
+														</Button>
+														<Button variant="contained" color="secondary" className={classes.button}>
+																Cancel
+														</Button>
+												</div>
+
+										</CardContent>
+										<CardContent className={classes.tomatoIcon}>
 												<CardMedia
 														className={classes.cover}
 														image={tomatoIcon}
 														title="Live from space album cover"
 												/>
-												<Button variant="contained" color="primary" className={classes.button}>
-														Create
-												</Button>
-												<Button variant="contained" color="secondary" className={classes.button}>
-														Cancel
-												</Button>
 										</CardContent>
 								</Card>
 				);

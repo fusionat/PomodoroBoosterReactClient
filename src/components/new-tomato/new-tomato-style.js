@@ -1,11 +1,29 @@
 const styles = theme => ({
-		newTomato: {
-				backgroundColor: 'green'
+		card: {
+				display: 'flex',
+				flexDirection: 'row'
+		},
+		content: {
+				display: 'flex',
+				justifyContent: 'center',
+				flexDirection: 'column'
 		},
 		cover: {
-				width: '50px',
-				height: '50px'
+				width: '100px',
+				height: '100px'
 		},
+
+		tomatoIcon: {
+				alignItems: 'center'
+		},
+
+		buttons: {
+				display: 'flex',
+				justifyContent: 'space-between'
+		},
+		input: {
+				width: '100%'
+		}
 });
 
 export default styles;
