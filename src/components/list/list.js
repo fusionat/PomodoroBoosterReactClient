@@ -16,45 +16,23 @@ import styles from "./list-style";
 
 const data = [
   {
+    id: 1,
     name: "My tomato",
     description: "00:25:00",
     fullComplete: true
   },
   {
+    id: 2,
     name: "My tomato",
     description: "00:25:00",
     fullComplete: true
   },
   {
+    id: 3,
     name: "My tomato",
     description: "00:25:00",
     fullComplete: false
-  },
-  {
-    name: "My tomato",
-    description: "00:25:00",
-    fullComplete: true
-  },
-  {
-    name: "My tomato",
-    description: "00:25:00",
-    fullComplete: true
-  },
-  {
-    name: "My tomato",
-    description: "00:25:00",
-    fullComplete: true
-  },
-  {
-    name: "Focus on English",
-    description: "00:25:00",
-    fullComplete: false
-  },
-  {
-    name: "My tomato",
-    description: "00:25:00",
-    fullComplete: true
-  },
+  }
 ];
 
 function AlignItemsList(props) {
@@ -65,10 +43,8 @@ function AlignItemsList(props) {
         <List className={classes.root}>
           {data.map(data => {
             return (
-              <ListItem className={classes.li} >
-                <ListItemAvatar className={classes.avatarImage}>
-                  <img alt="Tomato Icon" src={tomatoIcon} />
-                </ListItemAvatar>
+              <ListItem className={classes.li} key={data.id}>
+               <img alt="Tomato Icon" className={classes.avatarImage} src={tomatoIcon} />               
                 <ListItemText
                   primary={data.name}
                   secondary={
