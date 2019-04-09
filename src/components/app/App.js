@@ -6,7 +6,6 @@ import Tomato from "../tomato";
 import NewTomato from "../new-tomato";
 import theme from "../theme/theme";
 import AlignItemsList from "../list/list";
-import withPomodoroService from "../hoc/with-pomodoro-service";
 
 class App extends Component {
   render() {
@@ -32,4 +31,4 @@ class App extends Component {
   }
 }
 
-export default withPomodoroService()(withStyles(styles)(App));
+export default withStyles(styles)(App);

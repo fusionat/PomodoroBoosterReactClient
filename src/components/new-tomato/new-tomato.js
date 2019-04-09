@@ -39,7 +39,7 @@ class NewTomato extends Component {
 										<CardMedia
 												className={classes.cover}
 												image={tomatoIcon}
-												title="Live from space album cover"
+												title=""
 										/>
 								</CardContent>
 						</Card>

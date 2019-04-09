@@ -9,19 +9,6 @@ const styles = theme => ({
     width: "100%",
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper
-  },
-  li: {
-    paddingLeft: 0
-  },
-  
-  timerText: {
-    display: "inline",
-    color: "#283593"
-  },
-
-  avatarImage: {
-    width: "10%",
-    height: "10%"
   }
 });
 

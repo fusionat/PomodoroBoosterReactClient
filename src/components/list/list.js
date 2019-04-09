@@ -2,28 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
-import Delete from '@material-ui/icons/Delete';
-import IconButton from '@material-ui/core/IconButton';
-
-import tomatoIcon from "../icons/tomato-list.svg";
 import styles from "./list-style";
-
+import TomatoListItem from '../list-item/list-item'
 const data = [
   {
     id: 1,
-    name: "My tomato",
+    name: "TomatoTimers is a Custom Pomodoro Timer featuring To-do List with animated Tomatoes to boost your productivity.",
     description: "00:25:00",
     fullComplete: true
   },
   {
     id: 2,
-    name: "My tomato",
+    name: "TomatoTimer is a flexible and easy to use online Pomodoro Technique Timer.",
     description: "00:25:00",
     fullComplete: true
   },
@@ -43,25 +35,7 @@ function AlignItemsList(props) {
         <List className={classes.root}>
           {data.map(data => {
             return (
-              <ListItem className={classes.li} key={data.id}>
-               <img alt="Tomato Icon" className={classes.avatarImage} src={tomatoIcon} />               
-                <ListItemText
-                  primary={data.name}
-                  secondary={
-                    <React.Fragment>
-                      <Typography
-                        component="span"
-                        className={classes.timerText}
-                      >
-                        {data.description}
-                      </Typography>
-                    </React.Fragment>
-                  }
-                />
-                <IconButton aria-label="stop">
-                  <Delete/>
-                </IconButton>
-              </ListItem>
+              <TomatoListItem data={data}/>
             );
           })}
         </List>
