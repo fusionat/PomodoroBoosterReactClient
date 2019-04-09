@@ -8,18 +8,53 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Typography from "@material-ui/core/Typography";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
+import Delete from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
+
 import tomatoIcon from "../icons/tomato-list.svg";
 import styles from "./list-style";
 
 const data = [
   {
     name: "My tomato",
-    description: "00:25:00"
+    description: "00:25:00",
+    fullComplete: true
+  },
+  {
+    name: "My tomato",
+    description: "00:25:00",
+    fullComplete: true
+  },
+  {
+    name: "My tomato",
+    description: "00:25:00",
+    fullComplete: false
+  },
+  {
+    name: "My tomato",
+    description: "00:25:00",
+    fullComplete: true
+  },
+  {
+    name: "My tomato",
+    description: "00:25:00",
+    fullComplete: true
+  },
+  {
+    name: "My tomato",
+    description: "00:25:00",
+    fullComplete: true
   },
   {
     name: "Focus on English",
-    description: "00:25:00"
-  }
+    description: "00:25:00",
+    fullComplete: false
+  },
+  {
+    name: "My tomato",
+    description: "00:25:00",
+    fullComplete: true
+  },
 ];
 
 function AlignItemsList(props) {
@@ -47,6 +82,9 @@ function AlignItemsList(props) {
                     </React.Fragment>
                   }
                 />
+                <IconButton aria-label="stop">
+                  <Delete/>
+                </IconButton>
               </ListItem>
             );
           })}
