@@ -1,16 +1,17 @@
 
 const initialState = {
-    pomodoros: []
+    pomodoros: [],
+    tomatos: []
   };
   
   const reducer = (state = initialState, action) => {
   
-    switch (action.type) {
-      case 'GET_POMODOROS':
+    switch (action.type) {      
+      case 'TOMATOS_LOADED': 
         return {
-          pomodoros: action.payload
-        };
-  
+          ...state, tomatos: action.payload
+        } 
+
       default:
         return state;
     }

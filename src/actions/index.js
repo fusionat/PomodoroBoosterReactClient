@@ -1,5 +1,3 @@
-import getPomodoros from './service-actions'
+import { tomatosLoaded } from "./service-actions";
 
-export {
-    getPomodoros
-}
+export { tomatosLoaded };

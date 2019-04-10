@@ -1,3 +1,7 @@
-const getPomodoros = () => { type: 'GET_POMODOROS' };
-
-export default getPomodoros;
+const tomatosLoaded = tomatos => {
+  return {
+    type: "TOMATOS_LOADED",
+    payload: tomatos
+  };
+};
+export { tomatosLoaded };
