@@ -1,7 +1,8 @@
 
 const initialState = {
     pomodoros: [],
-    tomatos: []
+    tomatos: [],
+    loading: false
   };
   
   const reducer = (state = initialState, action) => {
@@ -9,7 +10,9 @@ const initialState = {
     switch (action.type) {      
       case 'TOMATOS_LOADED': 
         return {
-          ...state, tomatos: action.payload
+          ...state, 
+          tomatos: action.payload,
+          loading: true
         } 
 
       default:

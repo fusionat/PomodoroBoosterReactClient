@@ -6,25 +6,40 @@ import { withStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
+import CircularProgress from '@material-ui/core/CircularProgress'
 import styles from "./list-style";
 import TomatoListItem from "../list-item/list-item";
 import withPomodoroService from "../hoc/with-pomodoro-service";
 import { tomatosLoaded } from "../../actions";
 
-class TomatoItemsList extends Component {
+class TomatoItemsList extends Component {  
   componentDidMount() {
     const { pomodoroService, tomatosLoaded } = this.props;
-    tomatosLoaded(pomodoroService.getTomatos());
+    pomodoroService.getTomatos().then((data)=> {
+      tomatosLoaded(data);
+    })
+    
   }
 
   render() {
-    const { classes, tomatos } = this.props;
+    const { classes, tomatos, loading } = this.props;
+
+    if (!loading){
+      return (
+        <Card className={classes.progressBar}>
+          <CardContent>
+            <CircularProgress className={classes.progress} color="secondary" />
+          </CardContent>
+        </Card>
+      );
+    }
+
     return (
       <Card className={classes.card}>
         <CardContent>
           <List className={classes.root}>
             {tomatos.map(tomato => {
-              return <TomatoListItem data={tomato} />;
+              return <TomatoListItem data={tomato} key={tomato.id} />;
             })}
           </List>
         </CardContent>
@@ -37,9 +52,10 @@ TomatoItemsList.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-const mapStateToProps = ({ tomatos }) => {
+const mapStateToProps = ({ tomatos, loading }) => {
   return {
-    tomatos
+    tomatos,
+    loading
   };
 };
 
