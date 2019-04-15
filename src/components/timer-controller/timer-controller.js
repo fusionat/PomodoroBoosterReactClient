@@ -9,7 +9,7 @@ import EasyTimer from "easytimer.js";
 import styles from "./timer-controller-style";
 import IconButton from "@material-ui/core/IconButton";
 import withPomodoroService from "../hoc/with-pomodoro-service";
-import { timerValueUpdated } from "../../actions";
+import { timerValueUpdated, tomatoAddedInList } from "../../actions";
 
 const TimeController = props => {
   const { classes, onStart, onPause, onStop } = props;
@@ -50,11 +50,13 @@ class TimeControllerContainer extends Component {
   };
 
   onPause = () => {
-    this.timer.pause();
+    this.timer.pause();  
   };
 
   onStop = () => {
+    const { tomatoAddedInList } = this.props;
     this.timer.stop();
+    tomatoAddedInList()
   };
 
   render() {
@@ -76,7 +78,8 @@ const mapStateToProps = ({ timerValue }) => {
 };
 
 const mapDispatchToProps = {
-  timerValueUpdated
+  timerValueUpdated,
+  tomatoAddedInList
 };
 
 export default compose(

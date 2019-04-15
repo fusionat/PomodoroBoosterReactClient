@@ -10,7 +10,6 @@ const timerValueUpdated = timerValue => {
     type: "TIMER_VALUE_UPDATED",
     payload: timerValue
   };
-
 };
 const newTomatoStarted = newTomato => {
   return {
@@ -19,5 +18,15 @@ const newTomatoStarted = newTomato => {
   };
 };
 
+const tomatoAddedInList = () => {
+  return {
+    type: "TOMATO_ADDED_IN_LIST"
+  };
+};
 
-export { tomatosLoaded, timerValueUpdated, newTomatoStarted };
+export {
+  tomatosLoaded,
+  timerValueUpdated,
+  newTomatoStarted,
+  tomatoAddedInList
+};

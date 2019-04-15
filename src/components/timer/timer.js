@@ -20,9 +20,11 @@ class Timer extends Component {
 
 class TimeContainer extends Component {
   componentDidMount() {
+    debugger;
   }
 
   render() {
+    debugger;
     let { timerValue } = this.props;
     return <Timer timerValue={timerValue} {...this.props} />;
   }

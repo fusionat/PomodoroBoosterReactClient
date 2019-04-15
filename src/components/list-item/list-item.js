@@ -18,7 +18,7 @@ const TomatoListItem = props => {
         secondary={
           <React.Fragment>
             <Typography component="span" className={classes.timerText}>
-              {data.description}
+              {data.timerValue}
             </Typography>
           </React.Fragment>
         }

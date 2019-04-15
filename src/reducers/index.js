@@ -27,6 +27,15 @@ const reducer = (state = initialState, action) => {
         currentTomato: action.payload
       };
 
+    case "TOMATO_ADDED_IN_LIST":
+      let finishedTomato = state.currentTomato;
+      finishedTomato.timerValue = state.timerValue;
+      return {
+        ...state,
+        tomatos: [...state.tomatos, finishedTomato],
+        currentTomato: {}
+      };
+      
     default:
       return state;
   }

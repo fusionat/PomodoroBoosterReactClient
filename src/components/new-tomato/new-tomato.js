@@ -64,7 +64,7 @@ class NewTomatoContainer extends Component {
     newTomatoStarted({
       id: Math.random() * 100,
       name: newTomato,
-      description: "00:25:00",
+      timerValue: "00:25:00",
       fullComplete: true
     });
   };
