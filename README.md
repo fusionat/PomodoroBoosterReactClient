@@ -1,9 +1,11 @@
 
 
-![Screenshot](http://dl3.joxi.net/drive/2019/04/15/0001/0462/98766/66/97787349c0.jpg "Optional title")
+![Screenshot]( | 50  "Optional title")
+<img src="http://dl3.joxi.net/drive/2019/04/15/0001/0462/98766/66/97787349c0.jpg" alt="screenshot" height="50%" width="50%" >
 
 In the project directory, you can run:
 
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.<br>
