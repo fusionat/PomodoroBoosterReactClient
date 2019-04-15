@@ -48,7 +48,7 @@ class MediaControlCard extends Component {
             <TimerController tomatoName={this.state.tomatoName} />
           </div>
         </div>
-        <Timer />
+        <Timer />      
       </Card>
     );
   }
