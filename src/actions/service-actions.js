@@ -11,10 +11,10 @@ const timerValueUpdated = timerValue => {
     payload: timerValue
   };
 };
-const newTomatoStarted = newTomato => {
+const newTomatoStarted = newTomatoName => {
   return {
     type: "NEW_TOMATO_STARTED",
-    payload: newTomato
+    payload: newTomatoName
   };
 };
 

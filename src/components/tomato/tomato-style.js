@@ -25,6 +25,13 @@ const styles = theme => ({
 				fontSize: '0.7rem',
 				height: '25px'
 		},
+
+		cssLabel: {
+			'&$cssFocused': {
+				color: 'green',
+			},
+		},
+		cssFocused: {},
 });
 
 export default styles;

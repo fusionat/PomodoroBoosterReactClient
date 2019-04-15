@@ -20,18 +20,16 @@ class Timer extends Component {
 
 class TimeContainer extends Component {
   componentDidMount() {
-    debugger;
   }
 
   render() {
-    debugger;
     let { timerValue } = this.props;
     return <Timer timerValue={timerValue} {...this.props} />;
   }
 }
 
-const mapStateToProps = ({ timerValue }) => {
-  return { timerValue };
+const mapStateToProps = ({ currentTomato }) => {
+  return { timerValue: currentTomato.timerValue };
 };
 
 

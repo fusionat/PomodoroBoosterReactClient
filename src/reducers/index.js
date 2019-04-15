@@ -1,8 +1,9 @@
 const initialState = {
   pomodoros: [],
   tomatos: [],
-  currentTomato: {},
-  timerValue: "00:00:00",
+  currentTomato: {
+    timerValue: "00:00:00"
+  },
   loading: false
 };
 
@@ -16,26 +17,32 @@ const reducer = (state = initialState, action) => {
       };
 
     case "TIMER_VALUE_UPDATED":
+      const newUpdated = { ...state.currentTomato, timerValue: action.payload };
       return {
         ...state,
-        timerValue: action.payload
+        currentTomato: newUpdated
       };
 
     case "NEW_TOMATO_STARTED":
+      const newTomato = {
+        id: 4,
+        name: action.payload,
+        timerValue: "00:00:00"
+      };
       return {
         ...state,
-        currentTomato: action.payload
+        currentTomato: newTomato
       };
 
     case "TOMATO_ADDED_IN_LIST":
       let finishedTomato = state.currentTomato;
-      finishedTomato.timerValue = state.timerValue;
+
       return {
         ...state,
         tomatos: [...state.tomatos, finishedTomato],
-        currentTomato: {}
+        currentTomato: { timerValue: "00:00:00" }
       };
-      
+
     default:
       return state;
   }

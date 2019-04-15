@@ -3,7 +3,6 @@ import { withStyles, MuiThemeProvider } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import styles from "./app-style";
 import Tomato from "../tomato";
-import NewTomato from "../new-tomato";
 import theme from "../theme/theme";
 import AlignItemsList from "../list/list";
 
@@ -21,7 +20,6 @@ class App extends Component {
           alignItems="flex-start"
         >
           <div className={classes.root}>
-            <NewTomato />
             <Tomato />
             <AlignItemsList />
           </div>
