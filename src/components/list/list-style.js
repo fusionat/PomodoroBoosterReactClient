@@ -10,6 +10,7 @@ const styles = theme => {
     card: {
       ...card
     },
+    
     progressBar: {
       ...card,
       justifyContent: 'center'

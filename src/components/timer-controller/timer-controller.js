@@ -11,7 +11,7 @@ const TimeController = (props) => {
     
     return (
         <React.Fragment>
-            <IconButton aria-label="Start">
+            <IconButton aria-label="Start" onClick={()=>{alert(1);}}>
                 <PlayArrowIcon className={classes.play} />
             </IconButton>
 

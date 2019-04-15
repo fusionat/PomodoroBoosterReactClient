@@ -1,3 +1,3 @@
-import { tomatosLoaded } from "./service-actions";
+import { tomatosLoaded,timerValueUpdated } from "./service-actions";
 
-export { tomatosLoaded };
+export { tomatosLoaded, timerValueUpdated };

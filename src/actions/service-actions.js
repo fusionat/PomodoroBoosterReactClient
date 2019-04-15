@@ -1,7 +1,16 @@
 const tomatosLoaded = tomatos => {
   return {
-    type: "TOMATOS_LOADED",
+    type: "FETCH_TOMATOS_SUCCESS",
     payload: tomatos
   };
 };
-export { tomatosLoaded };
+
+const timerValueUpdated = timerValue => {
+  return {
+    type: "TIMER_VALUE_UPDATED",
+    payload: timerValue
+  };
+};
+
+
+export { tomatosLoaded, timerValueUpdated };

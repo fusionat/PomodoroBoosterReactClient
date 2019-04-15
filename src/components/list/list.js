@@ -6,25 +6,21 @@ import { withStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
-import CircularProgress from '@material-ui/core/CircularProgress'
+import CircularProgress from "@material-ui/core/CircularProgress";
 import styles from "./list-style";
 import TomatoListItem from "../list-item/list-item";
 import withPomodoroService from "../hoc/with-pomodoro-service";
 import { tomatosLoaded } from "../../actions";
 
-class TomatoItemsList extends Component {  
+class TomatoItemsList extends Component {
   componentDidMount() {
-    const { pomodoroService, tomatosLoaded } = this.props;
-    pomodoroService.getTomatos().then((data)=> {
-      tomatosLoaded(data);
-    })
-    
+    this.props.fetchTomatos();
   }
 
   render() {
     const { classes, tomatos, loading } = this.props;
 
-    if (!loading){
+    if (!loading) {
       return (
         <Card className={classes.progressBar}>
           <CardContent>
@@ -59,8 +55,15 @@ const mapStateToProps = ({ tomatos, loading }) => {
   };
 };
 
-const mapDispatchToProps = {
-  tomatosLoaded
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const { pomodoroService } = ownProps;
+  return {
+    fetchTomatos: () => {
+      pomodoroService.getTomatos().then(data => {
+        dispatch(tomatosLoaded(data));
+      });
+    }
+  };
 };
 
 export default compose(
