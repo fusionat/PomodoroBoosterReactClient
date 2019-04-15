@@ -1,13 +1,14 @@
 const initialState = {
   pomodoros: [],
   tomatos: [],
+  currentTomato: {},
   timerValue: "00:00:00",
   loading: false
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "FETCH_TOMATOS_SUCCESS":
+    case "FETCH_TOMATOS_REQUEST_SUCCESS":
       return {
         ...state,
         tomatos: action.payload,
@@ -18,6 +19,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         timerValue: action.payload
+      };
+
+    case "NEW_TOMATO_STARTED":
+      return {
+        ...state,
+        currentTomato: action.payload
       };
 
     default:

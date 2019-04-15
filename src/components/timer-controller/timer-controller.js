@@ -57,11 +57,6 @@ class TimeControllerContainer extends Component {
     this.timer.stop();
   };
 
-  componentWillUnmount() {
-    this.timer.stop();
-    this.timer = null;
-  }
-
   render() {
     let { timerValue } = this.props;
     return (
