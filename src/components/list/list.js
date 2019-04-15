@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
+import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
@@ -57,14 +58,17 @@ const mapStateToProps = ({ tomatos, loading }) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   const { pomodoroService } = ownProps;
-  return {
-    fetchTomatos: () => {
-      pomodoroService.getTomatos().then(data => {
-        dispatch(tomatosLoaded(data));
-      });
-    }
-  };
+  return bindActionCreators({
+    fetchTomatos: fetchTomatos(pomodoroService)
+  }, dispatch);
 };
+
+const fetchTomatos = (pomodoroService) => () => (dispatch) => {
+  pomodoroService.getTomatos().then(data => {
+    dispatch(tomatosLoaded(data));
+  });
+}
+
 
 export default compose(
   withPomodoroService(),
