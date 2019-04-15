@@ -3,14 +3,14 @@ export default class PomodoroStoreService {
     {
       id: 1,
       name:
-        "TomatoTimers is a Custom Pomodoro Timer featuring To-do List with animated Tomatoes to boost your productivity.",
+        "TomatoTimers is a Custom Pomodoro.",
       timerValue: "00:25:00",
       fullComplete: true
     },
     {
       id: 2,
       name:
-        "TomatoTimer is a flexible and easy to use online Pomodoro Technique Timer.",
+        "TomatoTimer is a flexible.",
       timerValue: "00:25:00",
       fullComplete: true
     },

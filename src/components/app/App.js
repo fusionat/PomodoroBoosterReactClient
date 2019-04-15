@@ -5,7 +5,7 @@ import styles from "./app-style";
 import Tomato from "../tomato";
 import theme from "../theme/theme";
 import AlignItemsList from "../list/list";
-import tomatoIcon from "../icons/tomato.svg"
+import TomatoIconList from '../tomato-icon/tomato-icon-list'
 
 class App extends Component {
   render() {
@@ -21,10 +21,7 @@ class App extends Component {
           alignItems="flex-start"
         >
           <div className={classes.root}>
-          <img src={tomatoIcon} ></img>
-          <img src={tomatoIcon} ></img>
-          <img src={tomatoIcon} ></img>
-          <img src={tomatoIcon} ></img>
+            <TomatoIconList />
             <Tomato />
             <AlignItemsList />
           </div>
