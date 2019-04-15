@@ -3,23 +3,17 @@ export default class PomodoroStoreService {
     {
       id: 1,
       name:
-        "TomatoTimers is a Custom Pomodoro.",
+        "Stay focus on TomatoProject.",
       timerValue: "00:25:00",
       fullComplete: true
     },
     {
       id: 2,
       name:
-        "TomatoTimer is a flexible.",
-      timerValue: "00:25:00",
+        "I'm refactoring!",
+      timerValue: "00:17:00",
       fullComplete: true
     },
-    {
-      id: 3,
-      name: "My tomato",
-      timerValue: "00:25:00",
-      fullComplete: false
-    }
   ];
 
   getTomatos = () => {

@@ -1,5 +1,4 @@
 const initialState = {
-  pomodoros: [],
   tomatos: [],
   currentTomato: {
     timerValue: "00:00:00"
@@ -17,7 +16,10 @@ const reducer = (state = initialState, action) => {
       };
 
     case "TIMER_VALUE_UPDATED":
-      const newUpdated = { ...state.currentTomato, timerValue: action.payload };
+      const newUpdated = { 
+        ...state.currentTomato, 
+        timerValue: action.payload
+       };
       return {
         ...state,
         currentTomato: newUpdated
