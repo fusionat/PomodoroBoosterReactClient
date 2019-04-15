@@ -4,6 +4,7 @@ const styles = theme => ({
         'flex-wrap': 'wrap',
         flexDirection: 'column',
         maxWidth: '500px',
+        minWidth: '350px',
     },
     margin:{
         margin: '5px'

@@ -6,7 +6,6 @@ import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import Chip from "@material-ui/core/Chip";
 import TextField from "@material-ui/core/TextField";
 import styles from "./tomato-style";
 import Timer from "../timer";
@@ -36,19 +35,14 @@ class MediaControlCard extends Component {
                 onChange={this.handleChange}
               />
             </Typography>
-            <Typography variant="subtitle1" color="textSecondary">
-              <Chip
-                label="MyProject"
-                color="secondary"
-                className={classes.chip}
-              />
-            </Typography>
           </CardContent>
+
+          <Timer />      
+
           <div className={classes.controls}>
             <TimerController tomatoName={this.state.tomatoName} />
           </div>
-        </div>
-        <Timer />      
+        </div>     
       </Card>
     );
   }

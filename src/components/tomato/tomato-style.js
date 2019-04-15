@@ -17,21 +17,12 @@ const styles = theme => ({
 		controls: {
 				display: 'flex',
 				alignItems: 'center',
-				paddingLeft: theme.spacing.unit,
-				paddingBottom: theme.spacing.unit,
+				justifyContent: 'center',
 		},
 
-		chip: {
-				fontSize: '0.7rem',
-				height: '25px'
-		},
-
-		cssLabel: {
-			'&$cssFocused': {
-				color: 'green',
-			},
-		},
-		cssFocused: {},
+		input:{
+			width: '100%'
+		}
 });
 
 export default styles;
