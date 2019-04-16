@@ -21,7 +21,6 @@ class App extends Component {
           alignItems="flex-start"
         >
           <div className={classes.root}>
-            <TomatoIconList />
             <Tomato />
             <AlignItemsList />
           </div>
