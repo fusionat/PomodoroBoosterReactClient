@@ -41,7 +41,7 @@ const reducer = (state = initialState, action) => {
 
       return {
         ...state,
-        tomatos: [...state.tomatos, finishedTomato],
+        tomatos: [finishedTomato,...state.tomatos, ],
         currentTomato: { timerValue: "00:00:00" }
       };
 
