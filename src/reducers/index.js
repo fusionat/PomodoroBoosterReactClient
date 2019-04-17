@@ -29,14 +29,13 @@ const reducer = (state = initialState, action) => {
       };
 
     case "NEW_TOMATO_STARTED":
-    debugger;
       if (state.timerStatus === timerStatus.PAUSE) {
         return {
           ...state,
           timerStatus: timerStatus.START
         };
       }
-
+      
       const newTomato = {
         id: 4,
         name: action.payload,
