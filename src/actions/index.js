@@ -2,12 +2,14 @@ import {
   tomatosLoaded,
   timerValueUpdated,
   newTomatoStarted,
-  tomatoAddedInList
+  newTomatoStoped,
+  newTomatoPaused
 } from "./service-actions";
 
 export {
   tomatosLoaded,
   timerValueUpdated,
   newTomatoStarted,
-  tomatoAddedInList
+  newTomatoPaused,
+  newTomatoStoped
 };
