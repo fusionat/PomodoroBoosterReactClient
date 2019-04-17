@@ -47,12 +47,18 @@ class TimeControllerContainer extends Component {
 
   onStart = () => {
     if (!this.timer.isRunning()) {
-      const { timerValueUpdated, newTomatoStarted, tomatoName } = this.props;
+      const { timerValueUpdated, newTomatoStarted, newTomatoStoped, tomatoName } = this.props;
+
       this.timer.addEventListener("secondsUpdated", e => {
         timerValueUpdated(this.timer.getTimeValues().toString());
       });
+
+      this.timer.addEventListener('targetAchieved', function (e) {
+        newTomatoStoped();
+      });
+
       newTomatoStarted(tomatoName);
-      this.timer.start();
+      this.timer.start({countdown: true, startValues: {seconds: 61}});
     }
   };
 
