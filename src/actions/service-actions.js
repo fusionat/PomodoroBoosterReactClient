@@ -18,9 +18,16 @@ const newTomatoStarted = newTomatoName => {
   };
 };
 
-const tomatoAddedInList = () => {
+const newTomatoPaused= () => {
   return {
-    type: "TOMATO_ADDED_IN_LIST"
+    type: "NEW_TOMATO_PAUSED"
+  };
+};
+
+
+const newTomatoStoped = () => {
+  return {
+    type: "NEW_TOMATO_STOPED"
   };
 };
 
@@ -28,5 +35,6 @@ export {
   tomatosLoaded,
   timerValueUpdated,
   newTomatoStarted,
-  tomatoAddedInList
+  newTomatoPaused,
+  newTomatoStoped,
 };

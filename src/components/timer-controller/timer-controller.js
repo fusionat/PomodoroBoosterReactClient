@@ -9,7 +9,12 @@ import EasyTimer from "easytimer.js";
 import styles from "./timer-controller-style";
 import IconButton from "@material-ui/core/IconButton";
 import withPomodoroService from "../hoc/with-pomodoro-service";
-import { timerValueUpdated, tomatoAddedInList, newTomatoStarted } from "../../actions";
+import {
+  timerValueUpdated,
+  newTomatoStoped,
+  newTomatoStarted,
+  newTomatoPaused
+} from "../../actions";
 
 const TimeController = props => {
   const { classes, onStart, onPause, onStop } = props;
@@ -41,23 +46,37 @@ class TimeControllerContainer extends Component {
   }
 
   onStart = () => {
-    const { timerValueUpdated, newTomatoStarted, tomatoName } = this.props;
-    this.timer.addEventListener("secondsUpdated", e => {
-      debugger;
-      timerValueUpdated(this.timer.getTimeValues().toString());
-    });
-    newTomatoStarted(tomatoName);
-    this.timer.start();
+    if (!this.timer.isRunning()) {
+      const { timerValueUpdated, newTomatoStarted, newTomatoStoped, tomatoName } = this.props;
+
+      this.timer.addEventListener("secondsUpdated", e => {
+        timerValueUpdated(this.timer.getTimeValues().toString());
+      });
+
+      this.timer.addEventListener('targetAchieved', function (e) {
+        newTomatoStoped();
+      });
+
+      newTomatoStarted(tomatoName);
+      this.timer.start({countdown: true, startValues: {seconds: 61}});
+    }
   };
 
   onPause = () => {
-    this.timer.pause();  
+    if (!this.timer.isRunning()) {
+      return;
+    }
+    const { newTomatoPaused } = this.props;
+    this.timer.pause();
+    newTomatoPaused();
   };
 
   onStop = () => {
-    const { tomatoAddedInList } = this.props;
-    this.timer.stop();
-    tomatoAddedInList()
+    if (this.timer.isRunning() || this.timer.isPaused()) {
+      const { newTomatoStoped } = this.props;
+      this.timer.stop();
+      newTomatoStoped();
+    }
   };
 
   render() {
@@ -80,8 +99,9 @@ const mapStateToProps = ({ timerValue }) => {
 
 const mapDispatchToProps = {
   timerValueUpdated,
-  tomatoAddedInList,
-  newTomatoStarted
+  newTomatoStarted,
+  newTomatoPaused,
+  newTomatoStoped
 };
 
 export default compose(
