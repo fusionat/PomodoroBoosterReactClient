@@ -37,7 +37,7 @@ const reducer = (state = initialState, action) => {
       }
       
       const newTomato = {
-        id: 4,
+        id: parseInt(Math.random() * 100),
         name: action.payload,
         timerValue: "00:00:00"
       };

@@ -10,7 +10,7 @@ import tomatoIcon from "../icons/tomato.svg";
 const TomatoListItem = props => {
   const { data, classes } = props;
   return (
-    <Slide direction="down" in={true} mountOnEnter unmountOnExit>
+    <Slide direction="down" in={true} >
       <ListItem className={classes.li} key={data.id}>
         <img alt="Tomato Icon" className={classes.avatarImage} src={tomatoIcon} />
         <ListItemText
