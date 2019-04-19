@@ -4,8 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import styles from "./app-style";
 import Tomato from "../tomato";
 import theme from "../theme/theme";
-import AlignItemsList from "../list/list";
-import TomatoIconList from '../tomato-icon/tomato-icon-list'
+import TomatoItemsList from "../list/list";
 
 class App extends Component {
   render() {
@@ -22,7 +21,7 @@ class App extends Component {
         >
           <div className={classes.root}>
             <Tomato />
-            <AlignItemsList />
+            <TomatoItemsList />
           </div>
         </Grid>
       </MuiThemeProvider>
