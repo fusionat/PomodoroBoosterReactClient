@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { compose } from "redux";
+import { compose, bindActionCreators } from "redux";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -10,17 +10,16 @@ import TextField from "@material-ui/core/TextField";
 import styles from "./tomato-style";
 import Timer from "../timer";
 import TimerController from "../timer-controller";
-
+import { tomatoNameUpdated } from "../../actions";
 
 class MediaControlCard extends Component {
-  state = { tomatoName: "" };
-
   handleChange = event => {
-    this.setState({ tomatoName: event.target.value });
+    const { tomatoNameUpdated } = this.props;
+    tomatoNameUpdated(event.target.value)
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, name } = this.props;
     return (
       <Card className={classes.card}>
         <div className={classes.details}>
@@ -28,6 +27,7 @@ class MediaControlCard extends Component {
             <Typography component="h5" variant="h5">
               <TextField
                 id="outlined-with-placeholder"
+                value={name}
                 label="Enter name of tomato"
                 margin="normal"
                 variant="outlined"
@@ -40,7 +40,7 @@ class MediaControlCard extends Component {
           <Timer />      
 
           <div className={classes.controls}>
-            <TimerController tomatoName={this.state.tomatoName} />
+            <TimerController/>
           </div>
         </div>     
       </Card>
@@ -64,15 +64,23 @@ MediaControlCard.propTypes = {
   theme: PropTypes.object.isRequired
 };
 
-const matStateToProps = ({ currentTomato }) => {
+const matStateToProps = ({ tomato : { name } }) => {
   return {
-    currentTomato
+    name
   };
 };
 
+const mapMethodsToProps = ( dispatch ) => {
+  return bindActionCreators({
+    tomatoNameUpdated: setChangedName
+  }, dispatch);
+}
 
+const setChangedName = (name) => (dispatch) => {
+  dispatch(tomatoNameUpdated(name));
+}
 
 export default compose(
-  connect(matStateToProps),
+  connect(matStateToProps, mapMethodsToProps),
   withStyles(styles, { withTheme: true })
 )(MediaControlCardContainer);

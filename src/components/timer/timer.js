@@ -19,8 +19,7 @@ class Timer extends Component {
 }
 
 class TimeContainer extends Component {
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   render() {
     let { timerValue } = this.props;
@@ -28,15 +27,12 @@ class TimeContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ currentTomato }) => {
-  return { timerValue: currentTomato.timerValue };
+const mapStateToProps = ({ tomato: { timerValue } }) => {
+  return { timerValue };
 };
-
 
 export default compose(
   withPomodoroService(),
-  connect(
-    mapStateToProps
-  ),
+  connect(mapStateToProps),
   withStyles(styles)
 )(TimeContainer);

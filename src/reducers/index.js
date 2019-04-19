@@ -2,7 +2,8 @@ import timerStatus from "./../enums/timer-status";
 
 const initialState = {
   tomatos: [],
-  currentTomato: {
+  tomato: {
+    name: "",
     timerValue: "00:00:00"
   },
   loading: false,
@@ -20,12 +21,21 @@ const reducer = (state = initialState, action) => {
 
     case "TIMER_VALUE_UPDATED":
       const newUpdated = {
-        ...state.currentTomato,
+        ...state.tomato,
         timerValue: action.payload
       };
       return {
         ...state,
-        currentTomato: newUpdated
+        tomato: newUpdated
+      };
+
+    case "TIMER_NAME_UPDATED":
+      return {
+        ...state,
+        tomato: {
+          ...state.tomato,
+          name: action.payload
+        }
       };
 
     case "NEW_TOMATO_STARTED":
@@ -35,15 +45,15 @@ const reducer = (state = initialState, action) => {
           timerStatus: timerStatus.START
         };
       }
-      
+
       const newTomato = {
-        id: parseInt(Math.random() * 100),
-        name: action.payload,
-        timerValue: "00:00:00"
+        ...state.tomato,
+        id: parseInt(Math.random() * 100)
       };
+
       return {
         ...state,
-        currentTomato: newTomato,
+        tomato: newTomato,
         timerStatus: timerStatus.START
       };
 
@@ -54,12 +64,12 @@ const reducer = (state = initialState, action) => {
       };
 
     case "NEW_TOMATO_STOPED":
-      let finishedTomato = state.currentTomato;
+      let finishedTomato = state.tomato;
 
       return {
         ...state,
         tomatos: [finishedTomato, ...state.tomatos],
-        currentTomato: { timerValue: "00:00:00" },
+        tomato: { timerValue: "00:00:00", name: "" },
         timerStatus: timerStatus.STOP
       };
 

@@ -3,7 +3,8 @@ import {
   timerValueUpdated,
   newTomatoStarted,
   newTomatoStoped,
-  newTomatoPaused
+  newTomatoPaused,
+  tomatoNameUpdated
 } from "./service-actions";
 
 export {
@@ -11,5 +12,6 @@ export {
   timerValueUpdated,
   newTomatoStarted,
   newTomatoPaused,
-  newTomatoStoped
+  newTomatoStoped,
+  tomatoNameUpdated
 };

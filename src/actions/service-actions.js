@@ -14,7 +14,7 @@ const timerValueUpdated = timerValue => {
 const newTomatoStarted = newTomatoName => {
   return {
     type: "NEW_TOMATO_STARTED",
-    payload: newTomatoName
+    //payload: newTomatoName
   };
 };
 
@@ -31,10 +31,18 @@ const newTomatoStoped = () => {
   };
 };
 
+const tomatoNameUpdated = (tomatoName) => {
+  return {
+    type: "TIMER_NAME_UPDATED",
+    payload: tomatoName
+  };
+};
+
 export {
   tomatosLoaded,
   timerValueUpdated,
   newTomatoStarted,
   newTomatoPaused,
   newTomatoStoped,
+  tomatoNameUpdated
 };
